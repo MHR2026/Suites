@@ -34,4 +34,4 @@ El descuento se aplica en Octorate: la tarifa o promoción tiene que estar cread
 `/<idioma>/busqueda/` muestra los resultados del motor de Octorate con su widget oficial
 (`https://resx.octorate.com/octobook/resources/widget/js/form.js`). Los buscadores de la web
 (`form[data-booking]`) envían ahí con `web/reservas.js`, en el mismo formato que el widget
-(`?octobooksearch=…`). Debajo de los resultados hay un enlace para abrir el motor a pantalla completa.
+(`?octobooksearch=…`). Los resultados ocupan todo el ancho y 600 px de alto (estilos en la propia página). Debajo hay un enlace para abrir el motor a pantalla completa.
