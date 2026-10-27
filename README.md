@@ -17,3 +17,14 @@ Se modifica editando directamente esos archivos.
 `.github/workflows/deploy.yml` sube `web/` a IONOS por SFTP en cada cambio de `main`.
 Necesita los secretos `SFTP_HOST`, `SFTP_USER`, `SFTP_PASSWORD` y `SFTP_PATH`
 (Settings → Secrets and variables → Actions). Sin ellos no publica nada.
+
+## Ofertas
+
+La sección «Ofertas» está en la portada de cada idioma (`web/<idioma>/index.html`, bloque `id="ofertas"`),
+con estilos en `web/ofertas.css` y comportamiento en `web/ofertas.js`:
+
+- `data-hasta="AAAA-MM-DD"`: último día en que se muestra la oferta; después desaparece sola.
+- `data-llegada="AAAA-MM-DD"`: fecha de llegada con la que se rellena el buscador al pulsar el botón.
+
+Las imágenes (`web/images/oferta-*.webp`) se generan con `python3 tools/imagenes-ofertas.py web`.
+El descuento se aplica en Octorate: la tarifa o promoción tiene que estar creada allí.

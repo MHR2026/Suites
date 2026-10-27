@@ -1,0 +1,18 @@
+/* Sección «Ofertas» de la portada. Usa los colores de la web (--site-*). */
+.ofertas { max-width: 72rem; margin: 0 auto; padding: 6rem 1rem 0; scroll-margin-top: 5rem; }
+.ofertas-eyebrow { font-size: .75rem; letter-spacing: .3em; text-transform: uppercase; color: var(--site-accent); }
+.ofertas h2 { margin-top: .75rem; font-size: 2.25rem; line-height: 1.1; color: var(--site-brand-dark); }
+.ofertas-grid { display: grid; gap: 2rem; margin-top: 3rem; }
+.oferta { display: flex; flex-direction: column; overflow: hidden; border-radius: 1rem; background: #fff; box-shadow: 0 1px 2px rgb(0 0 0 / .05); outline: 1px solid rgb(0 0 0 / .07); transition: box-shadow .3s; }
+.oferta:hover { box-shadow: 0 10px 30px rgb(0 0 0 / .12); }
+.oferta img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.oferta-body { display: flex; flex: 1; flex-direction: column; padding: 1.5rem; }
+.oferta-tag { align-self: flex-start; border-radius: 9999px; padding: .25rem .75rem; font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #fff; background: var(--site-accent); }
+.oferta h3 { margin-top: .75rem; font-size: 1.75rem; line-height: 1.15; color: var(--site-brand-dark); }
+.oferta p { margin-top: .5rem; color: rgb(43 42 39 / .8); }
+.oferta-cond { font-size: .875rem; color: rgb(43 42 39 / .6) !important; }
+.oferta-btn { align-self: flex-start; margin-top: auto; border-radius: 9999px; padding: .75rem 1.5rem; font-size: .875rem; font-weight: 500; color: #fff; background: var(--site-brand); transition: background .2s; }
+.oferta-body > .oferta-btn { margin-top: 1.5rem; }
+.oferta-btn:hover { background: var(--site-brand-dark); }
+@media (min-width: 640px) { .ofertas h2 { font-size: 3rem; } }
+@media (min-width: 768px) { .ofertas-grid { grid-template-columns: 1fr 1fr; } }
