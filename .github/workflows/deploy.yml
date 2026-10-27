@@ -1,0 +1,38 @@
+# Publica la web en el servidor de IONOS (1&1) por SFTP cada vez que se sube un cambio a main.
+#
+# Configurar en GitHub → Settings → Secrets and variables → Actions:
+#   SFTP_HOST      p. ej. access-XXXXXXX.webspace-host.com
+#   SFTP_USER      usuario SFTP de IONOS
+#   SFTP_PASSWORD  contraseña SFTP
+#   SFTP_PATH      carpeta de la web en el servidor
+#
+# Mientras no estén configurados, el workflow no publica nada.
+
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      SFTP_HOST: ${{ secrets.SFTP_HOST }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Subir a IONOS por SFTP
+        if: ${{ env.SFTP_HOST != '' }}
+        env:
+          SFTP_USER: ${{ secrets.SFTP_USER }}
+          SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
+          SFTP_PATH: ${{ secrets.SFTP_PATH }}
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+          # La contraseña se pasa por variable de entorno para que no la rompan comas o símbolos
+          export LFTP_PASSWORD="$SFTP_PASSWORD"
+          lftp --env-password -u "$SFTP_USER" "sftp://$SFTP_HOST:22" -e "
+            set sftp:auto-confirm yes;
+            mirror --reverse --delete --verbose --exclude-glob api/config.php --exclude-glob api/errores.log --exclude-glob mhr-form-config.php web/ '$SFTP_PATH';
+            bye"

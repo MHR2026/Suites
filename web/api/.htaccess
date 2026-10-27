@@ -1,0 +1,4 @@
+# Proteger el registro de errores y la configuración
+<FilesMatch "\.(log)$|^config(\.sample)?\.php$">
+  Require all denied
+</FilesMatch>
