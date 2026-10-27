@@ -28,3 +28,10 @@ con estilos en `web/ofertas.css` y comportamiento en `web/ofertas.js`:
 
 Las imágenes (`web/images/oferta-*.webp`) se generan con `python3 tools/imagenes-ofertas.py web`.
 El descuento se aplica en Octorate: la tarifa o promoción tiene que estar creada allí.
+
+## Reservas (página «Búsqueda»)
+
+`/<idioma>/busqueda/` muestra los resultados del motor de Octorate con su widget oficial
+(`https://resx.octorate.com/octobook/resources/widget/js/form.js`). Los buscadores de la web
+(`form[data-booking]`) envían ahí con `web/reservas.js`, en el mismo formato que el widget
+(`?octobooksearch=…`). Debajo de los resultados hay un enlace para abrir el motor a pantalla completa.

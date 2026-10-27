@@ -16,3 +16,9 @@
 .oferta-btn:hover { background: var(--site-brand-dark); }
 @media (min-width: 640px) { .ofertas h2 { font-size: 3rem; } }
 @media (min-width: 768px) { .ofertas-grid { grid-template-columns: 1fr 1fr; } }
+
+/* Página «Búsqueda»: resultados del motor de Octorate */
+.busqueda-vacia { margin-top: 2rem; color: rgb(43 42 39 / .6); }
+.busqueda-resultados .octoframe, #octoframe { display: block; width: 100%; height: 85vh; min-height: 640px; margin-top: 2rem; border: 0; border-radius: 1rem; background: #fff; box-shadow: 0 1px 2px rgb(0 0 0 / .05); outline: 1px solid rgb(0 0 0 / .07); }
+.busqueda-alt { margin-top: 1rem; font-size: .875rem; text-align: right; }
+.busqueda-alt a { color: var(--site-brand); text-decoration: underline; }
