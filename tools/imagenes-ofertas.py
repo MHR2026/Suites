@@ -42,5 +42,5 @@ def make(photo, pct, label, out):
     d.text((64, H - 74), label.upper(), font=fs, fill='white', anchor='ls')
     im.convert('RGB').save(f'{web}/images/{out}.webp', 'WEBP', quality=82)
 
-make('terraza-grande-3', 25, 'Nov 2026', 'oferta-noviembre')
+make('terraza-grande-3', 25, 'Last Minute · Nov 2026', 'oferta-last-minute')
 make('piscina', 10, 'Early Booking 2027', 'oferta-early-booking-2027')
