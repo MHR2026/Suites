@@ -12,7 +12,11 @@
 .oferta p { margin-top: .5rem; color: rgb(43 42 39 / .8); }
 .oferta-cond { font-size: .875rem; color: rgb(43 42 39 / .6) !important; }
 .oferta-btn { align-self: flex-start; margin-top: auto; border-radius: 9999px; padding: .75rem 1.5rem; font-size: .875rem; font-weight: 500; color: #fff; background: var(--site-brand); transition: background .2s; }
-.oferta-body > .oferta-btn { margin-top: 1.5rem; }
+.oferta-body > .oferta-btn { margin-top: auto; }
+.oferta-body > .oferta-cond { margin-bottom: 1.5rem; }
 .oferta-btn:hover { background: var(--site-brand-dark); }
 @media (min-width: 640px) { .ofertas h2 { font-size: 3rem; } }
 @media (min-width: 768px) { .ofertas-grid { grid-template-columns: 1fr 1fr; } }
+.oferta-cond-titulo { margin-top: 1rem !important; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; font-size: .75rem; }
+.oferta-cond ul { margin-top: .25rem; padding-left: 1.1rem; list-style: disc; }
+.oferta-cond li { margin-top: .2rem; }
